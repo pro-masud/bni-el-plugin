@@ -77,12 +77,10 @@ class BNI_Event_Tab_Category extends Widget_Base {
                                 <?php echo get_the_post_thumbnail(); ?>
                             </div>
                             <div class="bni-event-content">
-                                <div class="">
-                                    <h5 class="card-title"><?php the_title(); ?></h5>
-                                    <p class="card-text"><?php echo wp_trim_words( get_the_content(), 15, '...' ); ?></p>
-                                </div>
+                                <h5 class="card-title"><?php the_title(); ?></h5>
+                                <p class="card-text"><?php echo wp_trim_words( get_the_content(), 7, '...' ); ?></p>
                                 <div class="bni-event-meta">
-                                    <button class="btn"><?php echo esc_html($button_text); ?></button>
+                                    <button class="btn my-rsvp-popup" onclick="elementorProFrontend.modules.popup.showPopup({id:3972}); return false;"><?php echo esc_html($button_text); ?></button>
                                     <p><?php echo wp_kses_post($event_date); ?></p>
                                 </div>
                             </div>

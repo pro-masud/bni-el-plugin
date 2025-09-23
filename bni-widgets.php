@@ -80,30 +80,3 @@ function show_related_profiles_two() {
 add_shortcode('show_related_profiles_two', 'show_related_profiles_two');
 
 
-// Shortcode: [profile_categories]
-function mj_profile_categories_shortcode() {
-
-    $terms = get_terms(array(
-        'taxonomy'   => 'category',
-        'hide_empty' => true,
-    ));
-
-    if (empty($terms) || is_wp_error($terms)) {
-        return '<p>No categories found.</p>';
-    }
-
-    $output = '<ul class="profile-categories">';
-    foreach ($terms as $term) {
-        $output .= '<li>';
-        $output .= '<a href="' . esc_url(get_term_link($term)) . '">';
-        $output .= esc_html($term->name);
-        $output .= '</a>';
-        $output .= '</li>';
-    }
-    $output .= '</ul>';
-
-    return $output;
-}
-add_shortcode('profile_categories', 'mj_profile_categories_shortcode');
-
-
