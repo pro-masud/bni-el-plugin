@@ -1,0 +1,1 @@
+Place frontend partials in /frontend and include them from widget render() if you prefer templates.

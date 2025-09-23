@@ -1,0 +1,127 @@
+.bni-team-member-wrapper{
+    margin-top: 10px;
+    display: inline-block;
+}
+.bni-team-member-wrapper .bni-single-member{
+    padding: 10px 16px;
+    background-color: #F4F4F4;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.bni-team-member-wrapper .bni-single-member .bni-author-img,
+.bni-team-member-wrapper .bni-single-member .bni-content{
+    display: inline-block;
+}
+.bni-team-member-wrapper .bni-single-member .bni-author-img img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.bni-team-member-wrapper .bni-single-member .bni-content h3{
+    font-size: 16px;
+    font-weight: 400;
+    color: #6B6B6B;
+    font-family: 'Poppins', 'sans-serif';
+    margin: 0;
+    margin-left: 10px;
+}
+ .bni-team-member-wrapper .bni-single-member .bni-content h3 a{
+    color: #6B6B6B;
+    text-decoration: none;
+ }
+
+ .bni-team-member-wrapper.bni-team-member-two{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+ }
+
+ .bni-team-member-wrapper.bni-team-member-two .bni-single-member{
+    margin-bottom: 0px;
+ }
+
+ @media only screen and (max-width: 767px) {
+    .bni-team-member-wrapper .bni-single-member{
+        width: 100%;
+    }
+}
+
+.bni-filter-btns .btn{
+  color: #4B4A4A;
+  background-color: #FFFFFF;
+  margin-right: 10px;
+  border: 3px solid transparent;
+  padding: 12px 24px;
+}
+
+.bni-filter-btns .btn:hover{
+   border: 3px solid #CF2030 ;
+  color: #4B4A4A;
+  background-color: #FFFFFF;
+}
+
+.bni-filter-btns .btn.active {
+  border: 3px solid #CF2030 ;
+  color: #4B4A4A;
+  background-color: #FFFFFF;
+}
+
+.bni-evnet-item{
+  background-color: #fff;
+  padding: 24px;
+  padding-top: 0px;
+  border-radius: 20px;
+}
+
+.bni-gallery{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4%;
+  justify-content: space-between;
+}
+
+.bni-gallery .bni-item{
+  float: left;
+  width: 47%;
+  height: auto;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.bni-event-image img{  
+  width: 100%;
+  border-radius: 20px;
+}
+.bni-event-content .bni-event-meta{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+.bni-event-content .bni-event-meta p{
+  text-align: right;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #4E0B11;
+}
+
+.bni-event-meta button{
+  background-color: #CF2030;
+  padding: 12px 28px;
+  color: #FFFFFF;
+}
+.bni-event-meta button:hover{
+  background-color: #CF2030;
+  color: #FFFFFF;
+}
+@media only screen and (max-width: 767px) {
+    .bni-gallery .bni-item{
+      float: none;
+      width: 100%;
+    }
+}
