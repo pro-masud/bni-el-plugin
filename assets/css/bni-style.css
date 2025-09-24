@@ -140,3 +140,93 @@
       width: 100%;
     }
 }
+
+.bni-team-single-member .bni-single-member{
+  padding: 0px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.bni-team-single-member .bni-single-member .bni-content h3 a{
+  color: #fff;
+}
+
+
+/* profile details page */
+.bni-card {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 32px;
+    border-radius: 20px;
+}
+.bni-media{
+  width: 50%;
+  height: 368px;
+}
+.bni-media img{
+  width: 100%;
+  border-radius: 20px;
+}
+.elementor .bni-media img{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.bni-content{
+  width: 50%;
+}
+
+.bni-content .bni-subtitle{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  color: #6B6B6B;
+  margin: 0;
+}
+.bni-content .bni-title{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 140%;
+  color: #171717;
+  margin: 0;
+}
+
+.bni-collab-group {
+  margin-top: 50px;
+}
+.bni-collab-group .bni-collab-title{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  color: #171717;
+}
+.bni-content .bni-collab-group .bni-team-member-wrapper{
+  width: 50%;
+}
+.bni-content .bni-btn{
+  background-color: #CF2030;
+  padding: 12px 28px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  margin-top: 30px;
+  display: inline-block;
+}
+.bni-collab-group .bni-content a{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  color: #6B6B6B;
+  margin-left: 10px;
+}
