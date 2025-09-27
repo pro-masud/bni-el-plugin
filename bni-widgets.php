@@ -109,66 +109,123 @@ function collaboration_partner_collaboration_post() {
     // Get relationship field (ACF) that lists case studies/posts
     $collaboration_partner_collaboration = get_field('collaboration_partner_collaboration');
 
-    if (empty($collaboration_partner_collaboration)) {
-        return;
-    }
+   
     ?>
     <section class="bni-case">
         <?php
-        foreach ((array) $collaboration_partner_collaboration as $single_col) {
-            $single_col_id = is_object($single_col) ? $single_col->ID : (int) $single_col;
+         if ($collaboration_partner_collaboration) {
+            foreach ((array) $collaboration_partner_collaboration as $single_col) {
+                $single_col_id = is_object($single_col) ? $single_col->ID : (int) $single_col;
 
-            $collaborators_title = get_field('collaborators_title', $single_col_id);
-            $button_text = get_field('button_text', $single_col_id);
+                $collaborators_title = get_field('collaborators_title', $single_col_id);
+                $button_text = get_field('button_text', $single_col_id);
 
-            $permalink = get_permalink($single_col_id);
-            $title     = get_the_title($single_col_id);
+                $permalink = get_permalink($single_col_id);
+                $title     = get_the_title($single_col_id);
 
-            $content   = get_post_field('post_content', $single_col_id);
-            $excerpt   = wp_trim_words( wp_strip_all_tags($content), 13, '…' );
-            ?>
-            <div class="bni-card">
-                <div class="bni-media">
-                    <?php  echo get_the_post_thumbnail(  $single_col_id, 'medium',  array('alt' => esc_attr($title))  ); ?>
-                </div>
-                <div class="bni-content">
-                    <h3 class="bni-title">
-                        <?php echo esc_html($title); ?>
-                    </h3>
-                    <p class="bni-subtitle"><?php echo esc_html($excerpt); ?></p>
-                    <div class="bni-collab-group">
-                        <div class="bni-collab-title"><?php echo esc_html($collaborators_title); ?></div>
-
-                        <?php $members = get_field('member', $single_col_id); ?>
-                            <div class="bni-team-member-wrapper">
-                                <?php foreach ((array) $members as $member) :
-                                    $member_id    = is_object($member) ? $member->ID : (int) $member;
-                                    $member_title = get_the_title($member_id);
-                                    ?>
-                                    <div class="bni-single-member">
-                                        <div class="bni-author-img">
-                                            <?php echo get_the_post_thumbnail( $member_id,  'thumbnail',  array('alt' => esc_attr($member_title)) ); ?>
-                                        </div>
-                                        <div class="bni-content">
-                                            <a href="<?php echo esc_url(get_permalink($member_id)); ?>">
-                                                <?php echo esc_html($member_title); ?>
-                                            </a>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
+                $content   = get_post_field('post_content', $single_col_id);
+                $excerpt   = wp_trim_words( wp_strip_all_tags($content), 13, '…' );
+                ?>
+                <div class="bni-card">
+                    <div class="bni-media">
+                        <?php  echo get_the_post_thumbnail(  $single_col_id, 'medium',  array('alt' => esc_attr($title))  ); ?>
                     </div>
-                    <a href="<?php echo esc_url($permalink); ?>" class="bni-btn"><?php echo esc_html($button_text); ?></a>
+                    <div class="bni-content">
+                        <h3 class="bni-title">
+                            <?php echo esc_html($title); ?>
+                        </h3>
+                        <p class="bni-subtitle"><?php echo esc_html($excerpt); ?></p>
+                        <div class="bni-collab-group">
+                            <div class="bni-collab-title"><?php echo esc_html($collaborators_title); ?></div>
+
+                            <?php $members = get_field('member', $single_col_id); ?>
+                                <div class="bni-team-member-wrapper">
+                                    <?php foreach ((array) $members as $member) :
+                                        $member_id    = is_object($member) ? $member->ID : (int) $member;
+                                        $member_title = get_the_title($member_id);
+                                        ?>
+                                        <div class="bni-single-member">
+                                            <div class="bni-author-img">
+                                                <?php echo get_the_post_thumbnail( $member_id,  'thumbnail',  array('alt' => esc_attr($member_title)) ); ?>
+                                            </div>
+                                            <div class="bni-content">
+                                                <a href="<?php echo esc_url(get_permalink($member_id)); ?>">
+                                                    <?php echo esc_html($member_title); ?>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                        </div>
+                        <a href="<?php echo esc_url($permalink); ?>" class="bni-btn"><?php echo esc_html($button_text); ?></a>
+                    </div>
                 </div>
-            </div>
-            <?php
+                <?php
+            }
+        }else{
+            ?>
+                <p class="mt-4"><?php echo esc_html('No collaboration posts found.'); ?></p>
+            <?php 
         }
-        ?>
+            ?>
     </section>
     <?php
 }
 
 
 add_shortcode('collaboration_partner_collaboration_post', 'collaboration_partner_collaboration_post');
+
+
+function upcoming_event_post() {
+    // Get relationship field (ACF) that lists case studies/posts
+    $upcoming_events = get_field('upcoming_events');
+
+   
+    ?>
+    <section class="bni-case section-tap-events mt-4">
+                <?php
+         if ($upcoming_events) {
+            foreach ((array) $upcoming_events as $single_event) {
+                $single_event_id = is_object($single_event) ? $single_event->ID : (int) $single_event;
+
+                $button_text = get_field('button_text', $single_event_id);
+                $event_date = get_field('event_date', $single_event_id);
+
+                $permalink = get_permalink($single_event_id);
+                $title     = get_the_title($single_event_id);
+
+                $content   = get_post_field('post_content', $single_event_id);
+                $excerpt   = wp_trim_words( wp_strip_all_tags($content), 7, '…' );
+                ?>
+
+                <div class="bni-item bni-evnet-item">
+                        <div class="bni-event-image">
+                            <?php  echo get_the_post_thumbnail(  $single_event_id, 'medium',  array('alt' => esc_attr($title))  ); ?>
+                        </div>
+                        <div class="bni-event-content">
+                            <h5 class="card-title"> <?php echo esc_html($title); ?></h5>
+                            <p class="card-text"><?php echo esc_html($excerpt); ?></p>
+                            <div class="bni-event-meta">
+                                <button class="btn my-rsvp-popup" onclick="elementorProFrontend.modules.popup.showPopup({id:3972}); return false;"><?php echo esc_html($button_text); ?></button>
+                                <p><?php echo wp_kses_post($event_date); ?></p>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+            }
+        }else{
+            ?>
+                <p class="mt-4"><?php echo esc_html('No Events posts found.'); ?></p>
+            <?php 
+        }
+            ?>
+            </div>
+        </div>
+    </section>
+    <?php
+}
+
+
+add_shortcode('upcoming_event_post', 'upcoming_event_post');
 
 
