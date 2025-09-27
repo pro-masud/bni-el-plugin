@@ -207,7 +207,7 @@
   color: #171717;
 }
 .bni-content .bni-collab-group .bni-team-member-wrapper{
-  width: 50%;
+  width: 60%;
 }
 .bni-content .bni-btn{
   background-color: #CF2030;
@@ -232,16 +232,7 @@
 }
 
 /* tabs events */
-.section-tap-events{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.section-tap-events .bni-item.bni-evnet-item{
-  width: 48%;
-  padding: 24px;
-}
+
 
 
 @media only screen and (max-width: 1199px) {
@@ -263,5 +254,228 @@
   }
   .section-tap-events .bni-item.bni-evnet-item .bni-event-content .bni-event-meta p{
     text-align: left;
+  }
+}
+
+
+
+
+.bni-deal-single {
+   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.deal-card {
+  color: #fff;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.deal-card img {
+  width: 160px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.deal-content h5 {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140%;
+}
+
+.deal-content p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+}
+
+.deal-content .btn {
+  background: #fff;
+  color: #000;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 8px 18px;
+  transition: 0.3s;
+}
+
+.deal-content .btn:hover {
+  background: #f8d300;
+  color: #000;
+}
+
+.bni-text{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 140%;
+  color: #4E0B11 !important;
+  margin-top: 35px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .deal-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .deal-card img {
+    width: 100%;
+    height: 200px;
+  }
+}
+.bni-deal-slider-section{
+  position: relative;
+}
+.bni-controls{
+  position: absolute;
+  top: -10%;
+  right: 0;
+}
+.bni-controls button{
+  background-color: #FFFFFF;
+  border: none;
+}
+.bni-controls button:hover{
+  background-color: #CF2030;
+}
+.bni-controls button:hover svg{
+  stroke: #FFFFFF !important;
+}
+.bni-controls button:active{
+  background-color: #CF2030;
+}
+
+@media (max-width: 768px) {
+  .bni-controls {
+    position: absolute;
+    top: -5%;
+    right: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .bni-controls {
+    position: absolute;
+    top: -3%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.bni-event-controls{
+    position: absolute;
+    top: -7%;
+    right: 0px;
+}
+
+.bni-event-controls button{
+  background-color: #FFFFFF;
+  border: none;
+}
+.bni-event-controls button:hover{
+  background-color: #CF2030;
+}
+.bni-event-controls button:hover svg{
+  stroke: #FFFFFF !important;
+}
+.bni-event-controls button:active{
+  background-color: #CF2030;
+}
+
+@media (max-width: 768px) {
+  .bni-event-controls {
+    position: absolute;
+    top: -10%;
+    right: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .bni-event-controls {
+    position: absolute;
+    top: -6%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.bni-coll-controls{
+    position: absolute;
+    top: -4%;
+    right: 0px;
+}
+.bni-coll-controls button{
+  background-color: #FFFFFF;
+  border: none;
+}
+.bni-coll-controls button:hover{
+  background-color: #CF2030;
+}
+.bni-coll-controls button:hover svg{
+  stroke: #FFFFFF !important;
+}
+.bni-coll-controls button:active{
+  background-color: #CF2030;
+}
+@media (max-width: 1024px) {
+  .bni-card{
+    flex-direction: column;
+  }
+
+  .bni-card .bni-media {
+    width: 100%;
+  }
+  .bni-content{
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .bni-coll-controls {
+    position: absolute;
+    top: -5%;
+    right: 0;
+  }
+  .bni-collab-group{
+    margin-top: 30px;
+  }
+  .bni-single-member{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  .bni-coll-controls {
+    position: absolute;
+    top: 0%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .bni-collab-group{
+    margin-top: 20px;
+  }
+  .bni-content .bni-collab-group .bni-team-member-wrapper{
+    width: 100%;
   }
 }

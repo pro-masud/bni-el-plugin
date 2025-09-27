@@ -13,11 +13,17 @@ class BNI_WID_Enqueue {
         // Bootstrap CDN
         wp_register_style( 'bni-bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css', [], '5.3.2' );
         wp_enqueue_style( 'bni-bootstrap-css' );
+        wp_enqueue_style('bni-swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', [], '11');
         wp_enqueue_style( 'bni-style', BNI_WID_URL . 'assets/css/bni-style.css', [], BNI_WID_VERSION );
 
+        
         wp_enqueue_script( 'bni-bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', [ 'jquery' ], '5.3.2', true );
         wp_enqueue_script( 'bni-isotope-js', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', [ 'jquery' ], '2.0', true );
+        wp_enqueue_script('bni-swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], '11', true);
+
         wp_enqueue_script( 'bni-script', BNI_WID_URL . 'assets/js/bni-script.js', [ 'jquery' ], BNI_WID_VERSION, true );
+
+   
     }
 
     public static function editor_assets() {
